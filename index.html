@@ -3,96 +3,49 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Rapid Fire Multiplication</title>
-		<link rel="stylesheet" href="styles.css" />
+		<title>Math Practice</title>
+		<link rel="stylesheet" href="global.css" />
+		<link rel="stylesheet" href="index.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
 	</head>
 	<body>
 		<div class="container">
-			<!-- Settings screen -->
-			<section id="settings-screen" class="screen">
-				<h1>Rapid Fire Multiplication</h1>
+			<h1>Math Practice</h1>
+			<p class="subtitle">Pick something to practice</p>
 
-				<div class="field">
-					<label>Quiz mode</label>
-					<div class="mode-options">
-						<label class="mode-option">
-							<input type="radio" name="mode" value="questions" checked />
-							Number of questions
-						</label>
-						<label class="mode-option">
-							<input type="radio" name="mode" value="time" />
-							Fixed total time
-						</label>
-					</div>
-				</div>
+			<nav class="menu">
+				<a href="multiplication.html" class="menu-item">
+					<span class="menu-icon">✖️</span>
+					<span class="menu-text">
+						<span class="menu-title">Rapid Fire Multiplication</span>
+						<span class="menu-desc">Timed multiplication tables test</span>
+					</span>
+				</a>
 
-				<!-- Questions mode settings -->
-				<div id="questions-settings">
-					<div class="field">
-						<label for="num-questions">Number of questions</label>
-						<input type="number" id="num-questions" min="1" max="100" value="10" />
-					</div>
-				</div>
+				<a href="learn.html" class="menu-item">
+					<span class="menu-icon">📚</span>
+					<span class="menu-text">
+						<span class="menu-title">Learn the Tables</span>
+						<span class="menu-desc">View and practice any table 1–20</span>
+					</span>
+				</a>
 
-				<!-- Time mode settings -->
-				<div id="time-settings" hidden>
-					<div class="field">
-						<label for="total-time">Total time (minutes)</label>
-						<input type="number" id="total-time" min="1" max="120" value="10" />
-					</div>
-				</div>
-
-				<!-- Shared: applies to both modes -->
-				<div class="field">
-					<label for="time-per-question">Time per question (seconds)</label>
-					<input type="number" id="time-per-question" min="1" max="120" value="10" />
-				</div>
-
-				<div class="field">
-					<label>Tables to include</label>
-					<div id="tables-grid" class="tables-grid"></div>
-					<div class="tables-actions">
-						<button type="button" id="select-all" class="link-btn">Select all</button>
-						<button type="button" id="clear-all" class="link-btn">Clear all</button>
-					</div>
-				</div>
-
-				<p id="settings-error" class="error" hidden></p>
-
-				<button type="button" id="start-btn" class="primary">Start</button>
-
-				<a href="learn.html" class="nav-link">📚 Learn the tables</a>
-			</section>
-
-			<!-- Quiz screen -->
-			<section id="quiz-screen" class="screen" hidden>
-				<div class="quiz-header">
-					<span id="progress">Question 1 / 10</span>
-					<div class="timers">
-						<span id="total-timer" class="timer total" hidden>10:00</span>
-						<span id="timer" class="timer">10</span>
-					</div>
-				</div>
-
-				<div id="question" class="question">5 × 6</div>
-
-				<input type="number" id="answer" class="answer" inputmode="numeric" autocomplete="off" placeholder="Answer" />
-
-				<button type="button" id="next-btn" class="primary">Next</button>
-			</section>
-
-			<!-- Results screen -->
-			<section id="results-screen" class="screen" hidden>
-				<h1>Results</h1>
-				<p id="score" class="score">You scored 0 / 0</p>
-				<ul id="review-list" class="review-list"></ul>
-				<button type="button" id="restart-btn" class="primary">Play again</button>
-			</section>
+				<a href="fractions.html" class="menu-item">
+					<span class="menu-icon">½</span>
+					<span class="menu-text">
+						<span class="menu-title">Fractions ⇄ Percentages</span>
+						<span class="menu-desc">Convert common fractions and percentages</span>
+					</span>
+				</a>
+			</nav>
 		</div>
 
-		<script src="script.js"></script>
+		<footer class="footer">
+			Made with ❤️ by
+			<a href="https://github.com/thezaeemaanwar" target="_blank" rel="noopener">thezaeemaanwar</a>
+			· <a href="https://github.com/thezaeemaanwar/multiplication-practice" target="_blank" rel="noopener">⭐ Star / contribute on GitHub</a>
+		</footer>
 	</body>
 </html>

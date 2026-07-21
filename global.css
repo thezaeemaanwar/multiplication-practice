@@ -1,3 +1,9 @@
+/* ============================================================
+   Global styles — shared by every page.
+   Page-specific rules live in multiplication.css / fractions.css.
+   Each page sets its own body background-image on top of this.
+   ============================================================ */
+
 :root {
 	/* Brand — soft blue, matching the grid-paper background */
 	--color-primary: #7fb0cc;
@@ -25,7 +31,7 @@
 	--color-danger-bg: #f7deda;
 
 	/* Effects */
-	--shadow-card: 0 12px 34px rgba(51, 63, 74, 0.22);
+	--shadow-card: -12px 16px rgba(0, 0, 0, 0.22);
 }
 
 * {
@@ -37,7 +43,7 @@ body {
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
-	justify-content: end;
+	justify-content: center;
 	font-family:
 		"Patrick Hand",
 		cursive,
@@ -46,9 +52,13 @@ body {
 		"Segoe UI",
 		Roboto,
 		sans-serif !important;
-	background: var(--color-bg) url("background-2.jpg") center / cover no-repeat fixed;
+	background-color: var(--color-bg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	color: var(--color-text);
-	padding: 1rem;
+	padding: 1rem 1rem 3.5rem;
 }
 
 .container {
@@ -59,7 +69,6 @@ body {
 	border-radius: 18px;
 	box-shadow: var(--shadow-card);
 	padding: 2rem;
-	margin-right: 7%;
 }
 
 h1 {
@@ -69,6 +78,7 @@ h1 {
 	color: var(--color-primary-dark);
 }
 
+/* ---- Form fields ---- */
 .field {
 	margin-bottom: 1.25rem;
 }
@@ -117,48 +127,14 @@ input[type="number"]:focus {
 	margin: 0;
 }
 
-.tables-grid {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 0.5rem;
-}
-
-.table-toggle {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.35rem;
-	padding: 0.4rem 0;
-	border: 1px solid var(--color-border);
-	border-radius: 8px;
-	cursor: pointer;
-	user-select: none;
-	font-size: 1 rem;
-}
-
-.table-toggle input {
-	margin: 0;
-}
-
-.table-toggle.checked {
-	background: var(--color-primary-light);
-	border-color: var(--color-primary);
-	color: var(--color-primary-dark);
-}
-
-.tables-actions {
-	margin-top: 0.5rem;
-	display: flex;
-	gap: 1rem;
-}
-
+/* ---- Buttons & links ---- */
 .link-btn {
 	background: none;
 	border: none;
 	color: var(--color-primary);
 	cursor: pointer;
 	padding: 0;
-	font-size: 1 rem;
+	font-size: 1rem;
 }
 
 .link-btn:hover {
@@ -205,10 +181,17 @@ input[type="number"]:focus {
 .error {
 	color: var(--color-error);
 	margin: 0 0 1rem;
-	font-size: 1 rem;
+	font-size: 1rem;
 }
 
-/* Quiz screen */
+.hint {
+	margin: 0.6rem 0 0;
+	text-align: center;
+	font-size: 0.95rem;
+	color: var(--color-secondary);
+}
+
+/* ---- Quiz (shared by multiplication & fractions) ---- */
 .quiz-header {
 	display: flex;
 	justify-content: space-between;
@@ -216,31 +199,6 @@ input[type="number"]:focus {
 	margin-bottom: 1.5rem;
 	color: var(--color-secondary);
 	font-weight: 600;
-}
-
-.timers {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-.timer {
-	min-width: 2.5rem;
-	text-align: center;
-	padding: 0.25rem 0.6rem;
-	border-radius: 999px;
-	background: var(--color-primary-light);
-	color: var(--color-primary-dark);
-}
-
-.timer.total {
-	background: var(--color-accent);
-	color: #ffffff;
-}
-
-.timer.low {
-	background: var(--color-danger-bg);
-	color: var(--color-error);
 }
 
 .question {
@@ -256,7 +214,7 @@ input[type="number"]:focus {
 	text-align: center;
 }
 
-/* Results screen */
+/* ---- Results (shared) ---- */
 .score {
 	text-align: center;
 	font-size: 1.25rem;
@@ -293,84 +251,29 @@ input[type="number"]:focus {
 	font-weight: 600;
 }
 
-/* Learn page */
-.learn-controls {
-	display: flex;
-	gap: 0.5rem;
-}
-
-.learn-controls input[type="number"] {
-	flex: 1;
-}
-
-.learn-actions {
-	display: flex;
-	justify-content: space-between;
-	gap: 1rem;
-	margin-bottom: 1rem;
-}
-
-.learn-actions .link-btn {
-	font-size: 1.05rem;
-}
-
-.table-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.table-row {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 0.75rem;
-	padding: 0.5rem 0.9rem;
-	border-radius: 10px;
-	margin-bottom: 0.4rem;
-	background: #fffdf7;
-	border: 1px solid var(--color-border);
-	font-size: 1.4rem;
-}
-
-.table-row .expr {
-	color: var(--color-text);
-}
-
-.table-row .product {
-	font-weight: 700;
-	color: var(--color-primary-dark);
-}
-
-.table-answer {
-	width: 5.5rem !important;
+/* ---- Footer (shared) — fixed to the bottom of the page ---- */
+.footer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
 	text-align: center;
-	font-size: 1.2rem;
-	padding: 0.3rem !important;
-}
-
-.table-answer.correct {
-	border-color: var(--color-primary);
-	background: var(--color-success-bg);
-}
-
-.table-answer.wrong {
-	border-color: var(--color-error);
-	background: var(--color-wrong-bg);
-}
-
-.practice-result {
-	text-align: center;
-	font-size: 1.15rem;
-	font-weight: 600;
-	margin: 0.5rem 0 1rem;
+	padding: 0.55rem 1rem;
+	font-size: 0.9rem;
+	line-height: 1.4;
 	color: var(--color-secondary);
+	background: rgba(251, 245, 230, 0.82);
+	border-top: 1px solid var(--color-border);
+	backdrop-filter: blur(2px);
 }
 
-.practice-result.correct {
+.footer a {
 	color: var(--color-primary-dark);
+	text-decoration: none;
+	font-weight: 600;
 }
 
-.practice-result.wrong {
-	color: var(--color-error);
+.footer a:hover {
+	text-decoration: underline;
 }

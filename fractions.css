@@ -1,0 +1,52 @@
+/* ============================================================
+   Fractions ⇄ Percentages page (fractions.html).
+   Loaded alongside global.css.
+   ============================================================ */
+
+/* Palette to match background-3.jpg — blush grid, pink calculator, mint. */
+:root {
+	--color-primary: #e08a94;
+	--color-primary-hover: #d0737f;
+	--color-primary-dark: #b0596a;
+	--color-primary-light: #f6dde1;
+	--color-primary-ring: rgba(224, 138, 148, 0.4);
+
+	--color-accent: #9fccbf;
+	--color-accent-dark: #5f9c8b;
+
+	--color-bg: #f6ded4;
+	--color-text: #5a4a44;
+	--color-secondary: #8a7a72;
+	--color-border: #e6c9bf;
+
+	--color-error: #c25f59;
+	--color-success-bg: #dceee4;
+	--color-wrong-bg: #f7dcd8;
+	--color-danger-bg: #f7dcd8;
+}
+
+body {
+	background-image: url("background-3.png");
+	background-position: right;
+	justify-content: start;
+}
+
+.container {
+	margin-left: 10%;
+}
+
+/* Text answer box (fractions accept input like "1/2") */
+input[type="text"].answer {
+	width: 100%;
+	padding: 0.6rem 0.75rem;
+	color: var(--color-text);
+	background: #fffdf7;
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+}
+
+input[type="text"].answer:focus {
+	outline: none;
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 3px var(--color-primary-ring);
+}
