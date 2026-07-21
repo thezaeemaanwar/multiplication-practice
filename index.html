@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rapid Fire Multiplication</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+			<!-- Settings screen -->
+			<section id="settings-screen" class="screen">
+				<h1>Rapid Fire Multiplication</h1>
+
+				<div class="field">
+					<label>Quiz mode</label>
+					<div class="mode-options">
+						<label class="mode-option">
+							<input type="radio" name="mode" value="questions" checked />
+							Number of questions
+						</label>
+						<label class="mode-option">
+							<input type="radio" name="mode" value="time" />
+							Fixed total time
+						</label>
+					</div>
+				</div>
+
+				<!-- Questions mode settings -->
+				<div id="questions-settings">
+					<div class="field">
+						<label for="num-questions">Number of questions</label>
+						<input type="number" id="num-questions" min="1" max="100" value="10" />
+					</div>
+
+					<div class="field">
+						<label for="time-per-question">Time per question (seconds)</label>
+						<input type="number" id="time-per-question" min="1" max="120" value="10" />
+					</div>
+				</div>
+
+				<!-- Time mode settings -->
+				<div id="time-settings" hidden>
+					<div class="field">
+						<label for="total-time">Total time (minutes)</label>
+						<input type="number" id="total-time" min="1" max="120" value="10" />
+					</div>
+				</div>
+
+				<div class="field">
+					<label>Tables to include</label>
+					<div id="tables-grid" class="tables-grid"></div>
+					<div class="tables-actions">
+						<button type="button" id="select-all" class="link-btn">Select all</button>
+						<button type="button" id="clear-all" class="link-btn">Clear all</button>
+					</div>
+				</div>
+
+				<p id="settings-error" class="error" hidden></p>
+
+				<button type="button" id="start-btn" class="primary">Start</button>
+			</section>
+
+			<!-- Quiz screen -->
+			<section id="quiz-screen" class="screen" hidden>
+				<div class="quiz-header">
+					<span id="progress">Question 1 / 10</span>
+					<span id="timer" class="timer">10</span>
+				</div>
+
+				<div id="question" class="question">5 × 6</div>
+
+				<input type="number" id="answer" class="answer" inputmode="numeric" autocomplete="off" placeholder="Answer" />
+
+				<button type="button" id="next-btn" class="primary">Next</button>
+			</section>
+
+			<!-- Results screen -->
+			<section id="results-screen" class="screen" hidden>
+				<h1>Results</h1>
+				<p id="score" class="score">You scored 0 / 0</p>
+				<ul id="review-list" class="review-list"></ul>
+				<button type="button" id="restart-btn" class="primary">Play again</button>
+			</section>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
