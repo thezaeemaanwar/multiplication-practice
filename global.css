@@ -236,6 +236,31 @@ input[type="number"]:focus {
 	font-weight: 600;
 }
 
+.timers {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.timer {
+	min-width: 2.5rem;
+	text-align: center;
+	padding: 0.25rem 0.6rem;
+	border-radius: 999px;
+	background: var(--color-primary-light);
+	color: var(--color-primary-dark);
+}
+
+.timer.total {
+	background: var(--color-accent);
+	color: #ffffff;
+}
+
+.timer.low {
+	background: var(--color-danger-bg);
+	color: var(--color-error);
+}
+
 .question {
 	font-size: 3rem;
 	font-weight: 700;
