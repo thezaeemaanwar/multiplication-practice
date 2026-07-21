@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thezaeemaanwar.github.io/multiplication-practice/sitemap.xml
