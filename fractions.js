@@ -208,7 +208,11 @@ function showResults() {
 
     const given = document.createElement('span');
     given.className = 'given';
-    given.textContent = q.correct ? '✓' : `You: ${q.given === '' ? '—' : q.given}`;
+    if (q.correct) {
+      given.innerHTML = '<span class="material-symbols-outlined">check</span>';
+    } else {
+      given.textContent = `You: ${q.given === '' ? '—' : q.given}`;
+    }
 
     li.appendChild(prompt);
     li.appendChild(given);

@@ -74,7 +74,9 @@ function showTable() {
 
 function toggleMode() {
   practicing = !practicing;
-  modeBtn.textContent = practicing ? '👁 View answers' : '✏️ Practice this table';
+  modeBtn.innerHTML = practicing
+    ? '<span class="material-symbols-outlined">visibility</span> View answers'
+    : '<span class="material-symbols-outlined">edit</span> Practice this table';
   checkBtn.hidden = !practicing;
   render();
 }

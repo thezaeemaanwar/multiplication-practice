@@ -275,9 +275,11 @@ function showResults() {
 
     const given = document.createElement('span');
     given.className = 'given';
-    given.textContent = correct
-      ? '✓'
-      : `Your answer: ${q.given === null ? '—' : q.given}`;
+    if (correct) {
+      given.innerHTML = '<span class="material-symbols-outlined">check</span>';
+    } else {
+      given.textContent = `Your answer: ${q.given === null ? '—' : q.given}`;
+    }
 
     li.appendChild(question);
     li.appendChild(given);

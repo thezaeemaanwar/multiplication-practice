@@ -38,6 +38,35 @@
 	box-sizing: border-box;
 }
 
+/* ---- Google Material Symbols ---- */
+.material-symbols-outlined {
+	font-family: "Material Symbols Outlined" !important;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	font-size: 1.25em;
+	vertical-align: -0.22em;
+	font-variation-settings:
+		"FILL" 0,
+		"wght" 400,
+		"GRAD" 0,
+		"opsz" 24;
+}
+
+.material-symbols-outlined.filled {
+	font-variation-settings:
+		"FILL" 1,
+		"wght" 400,
+		"GRAD" 0,
+		"opsz" 24;
+}
+
 body {
 	margin: 0;
 	min-height: 100vh;
@@ -88,6 +117,12 @@ h1 {
 	font-size: 1.2rem;
 	font-weight: 600;
 	margin-bottom: 0.5rem;
+}
+
+/* Radios & checkboxes follow each page's theme via accent-color. */
+input[type="radio"],
+input[type="checkbox"] {
+	accent-color: var(--color-primary);
 }
 
 input[type="number"] {
@@ -251,6 +286,12 @@ input[type="number"]:focus {
 	font-weight: 600;
 }
 
+.review-list li.correct .material-symbols-outlined {
+	color: var(--color-primary-dark);
+	font-size: 1.3rem;
+	vertical-align: -0.28em;
+}
+
 /* ---- Footer (shared) — fixed to the bottom of the page ---- */
 .footer {
 	position: fixed;
@@ -261,9 +302,9 @@ input[type="number"]:focus {
 	text-align: center;
 	padding: 0.55rem 1rem;
 	font-size: 0.9rem;
-	line-height: 1.4;
+	line-height: 1.2;
 	color: var(--color-secondary);
-	background: rgba(251, 245, 230, 0.82);
+	background: rgba(251, 245, 230);
 	border-top: 1px solid var(--color-border);
 	backdrop-filter: blur(2px);
 }
@@ -276,4 +317,13 @@ input[type="number"]:focus {
 
 .footer a:hover {
 	text-decoration: underline;
+}
+
+.footer .material-symbols-outlined {
+	font-size: 1.15em;
+	vertical-align: -0.2em;
+}
+
+.footer .heart {
+	color: var(--color-error);
 }
