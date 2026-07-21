@@ -198,6 +198,12 @@ input[type="number"]:focus {
 	font-weight: 600;
 }
 
+.timers {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
 .timer {
 	min-width: 2.5rem;
 	text-align: center;
@@ -205,6 +211,11 @@ input[type="number"]:focus {
 	border-radius: 999px;
 	background: var(--color-primary-light);
 	color: var(--color-primary-dark);
+}
+
+.timer.total {
+	background: var(--color-accent);
+	color: #ffffff;
 }
 
 .timer.low {

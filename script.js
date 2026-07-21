@@ -13,6 +13,7 @@ const settingsError = document.getElementById('settings-error');
 
 const progressEl = document.getElementById('progress');
 const timerEl = document.getElementById('timer');
+const totalTimerEl = document.getElementById('total-timer');
 const questionEl = document.getElementById('question');
 const answerInput = document.getElementById('answer');
 
@@ -121,17 +122,17 @@ function startQuiz() {
     return showError('Please select at least one table.');
   }
 
+  // Per-question timer applies in both modes.
+  timeLimit = Number(timePerQuestionInput.value);
+  if (!Number.isInteger(timeLimit) || timeLimit < 1) {
+    return showError('Please enter a valid time per question.');
+  }
+
   if (mode === 'questions') {
     const count = Number(numQuestionsInput.value);
-    timeLimit = Number(timePerQuestionInput.value);
-
     if (!Number.isInteger(count) || count < 1) {
       return showError('Please enter a valid number of questions.');
     }
-    if (!Number.isInteger(timeLimit) || timeLimit < 1) {
-      return showError('Please enter a valid time per question.');
-    }
-
     questions = generateQuestions(count, selectedTables);
   } else {
     const minutes = Number(totalTimeInput.value);
@@ -144,6 +145,9 @@ function startQuiz() {
 
   current = 0;
   score = 0;
+
+  // Show the overall countdown badge only in time mode.
+  totalTimerEl.hidden = mode !== 'time';
 
   showScreen(quizScreen);
   if (mode === 'time') startTotalTimer();
@@ -158,15 +162,13 @@ function showError(msg) {
 // ----- Question flow -----
 function loadQuestion() {
   const q = questions[current];
-  if (mode === 'questions') {
-    progressEl.textContent = `Question ${current + 1} / ${questions.length}`;
-    startTimer();
-  } else {
-    progressEl.textContent = `Question ${current + 1}`;
-  }
+  progressEl.textContent = mode === 'questions'
+    ? `Question ${current + 1} / ${questions.length}`
+    : `Question ${current + 1}`;
   questionEl.textContent = `${q.a} × ${q.b}`;
   answerInput.value = '';
   answerInput.focus();
+  startTimer(); // per-question countdown runs in both modes
 }
 
 function startTimer() {
@@ -217,12 +219,13 @@ function stopTotalTimer() {
 function updateTotalTimerDisplay() {
   const m = Math.floor(totalTimeLeft / 60);
   const s = totalTimeLeft % 60;
-  timerEl.textContent = `${m}:${String(s).padStart(2, '0')}`;
-  timerEl.classList.toggle('low', totalTimeLeft <= 10);
+  totalTimerEl.textContent = `${m}:${String(s).padStart(2, '0')}`;
+  totalTimerEl.classList.toggle('low', totalTimeLeft <= 10);
 }
 
 function endTimeQuiz() {
   stopTotalTimer();
+  stopTimer();
   // Record the answer for the question on screen when time ran out.
   const q = questions[current];
   const raw = answerInput.value.trim();
