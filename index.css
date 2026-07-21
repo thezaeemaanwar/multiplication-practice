@@ -73,6 +73,19 @@ body {
 	flex-shrink: 0;
 }
 
+/* Each menu icon gets its own colour from the background's palette. */
+.menu-item:nth-child(1) .menu-icon {
+	color: var(--color-accent-dark); /* coral */
+}
+
+.menu-item:nth-child(2) .menu-icon {
+	color: var(--color-primary); /* mint/teal */
+}
+
+.menu-item:nth-child(3) .menu-icon {
+	color: #d99a3c; /* warm amber, like the pencil */
+}
+
 .menu-text {
 	display: flex;
 	flex-direction: column;

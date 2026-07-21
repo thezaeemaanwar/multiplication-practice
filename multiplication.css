@@ -94,8 +94,9 @@ body {
 	margin-bottom: 1rem;
 }
 
-.learn-actions .link-btn {
-	font-size: 1.05rem;
+.learn-actions .link-btn,
+.learn-actions .material-symbols-outlined {
+	font-size: 0.8rem;
 }
 
 .table-list {
