@@ -27,7 +27,7 @@
 }
 
 body {
-	background-image: url("background.png");
+	background-image: url("images/background.png");
 }
 
 .subtitle {
@@ -75,14 +75,18 @@ body {
 
 /* Each menu icon gets its own colour from the background's palette. */
 .menu-item:nth-child(1) .menu-icon {
-	color: var(--color-accent-dark); /* coral */
+	color: #8a7cc4; /* lavender — Addition & Subtraction */
 }
 
 .menu-item:nth-child(2) .menu-icon {
-	color: var(--color-primary); /* mint/teal */
+	color: var(--color-accent-dark); /* coral */
 }
 
 .menu-item:nth-child(3) .menu-icon {
+	color: var(--color-primary); /* mint/teal */
+}
+
+.menu-item:nth-child(4) .menu-icon {
 	color: #d99a3c; /* warm amber, like the pencil */
 }
 
