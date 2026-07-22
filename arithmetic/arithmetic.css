@@ -1,0 +1,37 @@
+/* ============================================================
+   Addition & Subtraction page (arithmetic.html).
+   Loaded alongside global.css.
+   ============================================================ */
+
+/* Lavender palette — distinct from the other modules. */
+:root {
+	--color-primary: #8a7cc4;
+	--color-primary-hover: #7566b3;
+	--color-primary-dark: #52468a;
+	--color-primary-light: #e6e1f5;
+	--color-primary-ring: rgba(138, 124, 196, 0.35);
+
+	--color-accent: #e0a458;
+	--color-accent-dark: #c07f2e;
+
+	--color-bg: #e6e4ee;
+	--color-surface: rgb(253, 242, 243);
+	--color-text: #453f52;
+	--color-secondary: #756e82;
+	--color-border: #c8c1e0;
+
+	--color-error: #c25f59;
+	--color-success-bg: #e2eede;
+	--color-wrong-bg: #f3dce6;
+	--color-danger-bg: #f3dce6;
+}
+
+/* Artwork sits on the left of background-4.png, so keep the card on the right. */
+body {
+	background-image: url("../images/background-4.png");
+	justify-content: end;
+}
+
+.container {
+	margin-right: 7%;
+}

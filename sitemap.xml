@@ -6,17 +6,22 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://thezaeemaanwar.github.io/multiplication-practice/multiplication.html</loc>
+		<loc>https://thezaeemaanwar.github.io/multiplication-practice/arithmetic/arithmetic.html</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.9</priority>
 	</url>
 	<url>
-		<loc>https://thezaeemaanwar.github.io/multiplication-practice/learn.html</loc>
+		<loc>https://thezaeemaanwar.github.io/multiplication-practice/multiplication/multiplication.html</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.9</priority>
+	</url>
+	<url>
+		<loc>https://thezaeemaanwar.github.io/multiplication-practice/multiplication/learn.html</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>https://thezaeemaanwar.github.io/multiplication-practice/fractions.html</loc>
+		<loc>https://thezaeemaanwar.github.io/multiplication-practice/fractions/fractions.html</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
 	</url>
