@@ -90,6 +90,10 @@ body {
 	color: #d99a3c; /* warm amber, like the pencil */
 }
 
+.menu-item:nth-child(5) .menu-icon {
+	color: #4f8fc0; /* blue — Squares & Square Roots */
+}
+
 .menu-text {
 	display: flex;
 	flex-direction: column;

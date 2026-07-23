@@ -1,6 +1,6 @@
 # Math Practice
 
-A simple, configurable set of math-practice tools — multiplication drills, table learning, and fraction/percentage conversion. Plain HTML, CSS, and JavaScript — no build step, no dependencies.
+A simple, configurable set of math-practice tools — addition/subtraction drills, multiplication drills, table learning, fraction/percentage conversion, and squares/square-roots practice. Plain HTML, CSS, and JavaScript — no build step, no dependencies.
 
 ## Getting started
 
@@ -9,7 +9,7 @@ Open `index.html` in any modern browser. It's a landing page that links to each 
 ## Pages
 
 ### 🏠 Home — `index.html`
-An entryway that navigates to the three activities below.
+An entryway that navigates to the activities below.
 
 ### ➕ Addition & Subtraction — `arithmetic/arithmetic.html`
 Simple, timed add/subtract drills. Choose **Add**, **Subtract**, or **Mixed**, set the largest number to use, and answer rapid-fire questions. Subtraction is always generated so the answer is never negative. Shares the same two quiz modes (fixed number of questions or fixed total time) and per-question timer as the other quizzes.
@@ -34,6 +34,9 @@ Convert between common fractions and percentages in either direction (or mixed).
 - Decimal answers may be **shortened without rounding** — e.g. `1/3` accepts `33.3`, `33.33`, `33`, etc., but not `33.4`.
 - Fraction answers accept any equal fraction — e.g. `2/4` is accepted for `1/2`.
 
+### √ Squares &amp; Square Roots — `squares/squares.html`
+Timed practice for perfect squares and square roots. Choose **Square n²**, **Root √**, or **Mixed**, and set the **largest base** to use. Roots always use a perfect square, so every answer is a whole number. Shares the same two quiz modes (fixed number of questions or fixed total time) and per-question timer as the other quizzes.
+
 ## Files
 
 Each activity lives in its own folder, with shared styles and images at the root.
@@ -46,9 +49,11 @@ Each activity lives in its own folder, with shared styles and images at the root
 | `arithmetic/arithmetic.css` | Addition & Subtraction page styles (uses `images/background-4.png`) |
 | `multiplication/multiplication.html` / `script.js` | Rapid Fire Multiplication quiz logic |
 | `multiplication/learn.html` / `learn.js` | Learn-the-tables view/practice page |
-| `multiplication/multiplication.css` | Multiplication + learn page styles (uses `images/background-2.jpg`) |
+| `multiplication/multiplication.css` | Multiplication + learn page styles (uses `images/background-3.png`) |
 | `fractions/fractions.html` / `fractions.js` | Fractions ⇄ Percentages test |
-| `fractions/fractions.css` | Fractions page styles (uses `images/background-3.png`) |
+| `fractions/fractions.css` | Fractions page styles (uses `images/background-2.jpg`) |
+| `squares/squares.html` / `squares.js` | Squares & Square Roots quiz logic |
+| `squares/squares.css` | Squares page styles (uses `images/background-3.png`) |
 | `images/background*.{png,jpg}` | Background illustrations; the palette is themed to match them |
 
 ## Theming

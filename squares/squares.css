@@ -1,0 +1,38 @@
+/* ============================================================
+   Perfect Squares & Square Roots page (squares.html).
+   Loaded alongside global.css.
+   ============================================================ */
+
+/* Blue palette — distinct from the other modules. */
+:root {
+	--color-primary: #4f8fc0;
+	--color-primary-hover: #3d7cad;
+	--color-primary-dark: #2c5a80;
+	--color-primary-light: #dceaf5;
+	--color-primary-ring: rgba(79, 143, 192, 0.35);
+
+	--color-accent: #e0a458;
+	--color-accent-dark: #c07f2e;
+
+	--color-bg: #e2e8ee;
+	--color-surface: rgb(253, 250, 244);
+	--color-text: #3a4652;
+	--color-secondary: #6b7682;
+	--color-border: #bcccd8;
+
+	--color-error: #c25f59;
+	--color-success-bg: #dceee0;
+	--color-wrong-bg: #f8ddda;
+	--color-danger-bg: #f8ddda;
+}
+
+/* Artwork (the handwritten note) sits on the right of background-3.png,
+   so keep the card on the left. */
+body {
+	background-image: url("../images/background-3.png");
+	justify-content: start;
+}
+
+.container {
+	margin-left: 7%;
+}
